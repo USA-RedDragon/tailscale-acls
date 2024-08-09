@@ -42,7 +42,7 @@
 	 		"deny": ["tag:open:*"],
 	 	},
 		{
-			"src": "autogroup:member"
+			"src": "autogroup:member",
 			"accept": ["tag:open:*"],
 			"deny": ["autogroup:admin"],
 		},
