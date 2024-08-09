@@ -21,7 +21,7 @@
 		{
 			"action": "check",
 			"src":    ["autogroup:admin"],
-			"dst":    ["autogroup:admin", "autogroup:member"],
+			"dst":    ["autogroup:member"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
