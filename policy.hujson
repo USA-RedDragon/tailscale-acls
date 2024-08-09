@@ -2,6 +2,7 @@
 {
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
+		"tag:ssh": ["autogroup:admin"],
 	},
 
 	"acls": [
@@ -21,7 +22,7 @@
 		{
 			"action": "check",
 			"src":    ["autogroup:admin"],
-			"dst":    ["autogroup:danger-all"],
+			"dst":    ["tag:ssh"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
