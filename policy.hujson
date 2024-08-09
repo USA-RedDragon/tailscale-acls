@@ -11,7 +11,7 @@
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// Can always access internet, self, and tagged open
-		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53"]},
+		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53", "autogroup:member:443"]},
 	],
 
 	"ssh": [
@@ -45,7 +45,7 @@
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
 			// accept phone
-	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53"],
+	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443"],
 			// deny framework 13
 	 		"deny": ["100.79.93.121:80","tag:dns:5353"],
 	 	},
