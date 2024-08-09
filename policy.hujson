@@ -25,7 +25,7 @@
 		{
 			"action": "accept",
 			"src":    ["autogroup:admin"],
-			"dst":    ["*:*"],
+			"dst":    ["*"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
