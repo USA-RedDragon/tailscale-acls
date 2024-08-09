@@ -79,7 +79,7 @@
 		},
 		{
 			"src": "100.92.110.43",
-			"dst": ["100.118.133.63"],
+			"dst": ["tag:ssh"],
 			"check": ["admin", "reddragon", "root"],
 		},
 	],
