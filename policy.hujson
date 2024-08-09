@@ -27,16 +27,15 @@
 		},
 	],
 
-	// Test access rules every time they're saved.
 	"tests": [
 	 	{
 	 		"src": "USA-RedDragon@github",
-	 		"accept": ["*"],
+	 		"accept": ["*:*"],
 	 	},
 		{
 	 		"src": "torvalds@github",
 	 		"accept": [],
-	 		"deny": ["tag:open:*"],
+	 		"deny": ["tag:open"],
 	 	},
 	],
 }
