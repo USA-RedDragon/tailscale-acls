@@ -22,20 +22,65 @@
 		{
 			"action": "check",
 			"src":    ["autogroup:admin"],
-			"dst":    ["tag:ssh"],
-			"users":  ["autogroup:nonroot", "root"],
+			"dst":    ["tag:ssh","autogroup:self"],
+			"users":  ["autogroup:nonroot","root"],
 		},
 	],
 
 	"tests": [
 	 	{
 	 		"src": "USA-RedDragon@github",
-	 		"accept": ["*:*"],
+	 		"proto": "tcp",
+			"accept": ["100.79.93.121:80","100.68.97.8:80"],
 	 	},
 		{
 	 		"src": "torvalds@github",
 	 		"accept": [],
-	 		"deny": ["tag:open"],
+	 		"proto": "tcp",
+	 		"deny": ["tag:open:80"],
 	 	},
+		{
+	 		"src": "katelyn.c.maes@gmail.com",
+	 		"proto": "tcp",
+			// accept phone
+	 		"accept": ["100.68.97.8:80","tag:open:80"],
+			// deny framework 13
+	 		"deny": ["100.79.93.121:80"],
+	 	},
+	],
+
+	"sshTests": [
+		{
+			"src": "USA-RedDragon@github",
+			"dst": ["100.79.93.121"],
+			"check": ["admin", "reddragon"],
+		},
+		{
+			"src": "katelyn.c.maes@gmail.com",
+			"dst": ["100.118.133.63"],
+			"check": ["admin", "reddragon"],
+			"deny": ["root"],
+		},
+		{
+			"src": "100.68.97.8",
+			"dst": ["100.118.133.63"],
+			"check": ["admin", "reddragon"],
+			"deny": ["root"],
+		},
+		{
+			"src": "100.68.97.8",
+			"dst": ["100.79.93.121"],
+			"deny": ["admin", "reddragon", "root"],
+		},
+		{
+			"src": "100.92.110.43",
+			"dst": ["100.79.93.121"],
+			"check": ["admin", "reddragon", "root"],
+		},
+		{
+			"src": "100.92.110.43",
+			"dst": ["100.118.133.63"],
+			"check": ["admin", "reddragon", "root"],
+		},
 	],
 }
