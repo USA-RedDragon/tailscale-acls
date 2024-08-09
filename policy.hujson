@@ -14,13 +14,13 @@
 
 	"ssh": [
 		{
-			"action": "check",
+			"action": "accept",
 			"src":    ["autogroup:member"],
 			"dst":    ["autogroup:self"],
 			"users":  ["autogroup:nonroot"],
 		},
 		{
-			"action": "check",
+			"action": "accept",
 			"src":    ["autogroup:admin"],
 			"dst":    ["tag:ssh","autogroup:self"],
 			"users":  ["autogroup:nonroot","root"],
@@ -53,18 +53,18 @@
 		{
 			"src": "USA-RedDragon@github",
 			"dst": ["100.79.93.121"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 		},
 		{
 			"src": "katelyn.c.maes@gmail.com",
 			"dst": ["100.118.133.63"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
 			"src": "100.68.97.8",
 			"dst": ["100.118.133.63"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -75,12 +75,12 @@
 		{
 			"src": "100.92.110.43",
 			"dst": ["100.79.93.121"],
-			"check": ["admin", "reddragon", "root"],
+			"accept": ["admin", "reddragon", "root"],
 		},
 		{
 			"src": "100.92.110.43",
 			"dst": ["tag:ssh"],
-			"check": ["admin", "reddragon", "root"],
+			"accept": ["admin", "reddragon", "root"],
 		},
 	],
 }
