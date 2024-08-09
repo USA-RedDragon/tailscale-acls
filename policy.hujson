@@ -80,4 +80,10 @@
 			"accept": ["admin", "reddragon", "root"],
 		},
 	],
+	"nodeAttrs": [
+		{
+			"target": ["autogroup:member"],
+			"attr":   ["funnel"],
+		},
+	],
 }
