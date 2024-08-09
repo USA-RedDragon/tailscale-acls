@@ -82,7 +82,7 @@
 	],
 	"nodeAttrs": [
 		{
-			"target": ["autogroup:member"],
+			"target": ["autogroup:member","tag:k8s"],
 			"attr":   ["funnel"],
 		},
 	],
