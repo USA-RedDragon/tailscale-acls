@@ -21,6 +21,12 @@
 			"dst":    ["autogroup:self"],
 			"users":  ["autogroup:nonroot"],
 		},
+		{
+			"action": "accept",
+			"src":    ["autogroup:admin"],
+			"dst":    ["autogroup:self"],
+			"users":  ["autogroup:nonroot", "root"],
+		},
 	],
 
 	"tests": [
