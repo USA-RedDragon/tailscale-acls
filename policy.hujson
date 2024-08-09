@@ -16,13 +16,13 @@
 
 	"ssh": [
 		{
-			"action": "accept",
+			"action": "check",
 			"src":    ["autogroup:member"],
 			"dst":    ["autogroup:self"],
 			"users":  ["autogroup:nonroot"],
 		},
 		{
-			"action": "accept",
+			"action": "check",
 			"src":    ["autogroup:admin"],
 			"dst":    ["autogroup:self"],
 			"users":  ["autogroup:nonroot", "root"],
@@ -55,18 +55,18 @@
 		{
 			"src": "USA-RedDragon@github",
 			"dst": ["100.79.93.121"],
-			"accept": ["admin", "reddragon"],
+			"check": ["admin", "reddragon"],
 		},
 		{
 			"src": "katelyn.c.maes@gmail.com",
 			"dst": ["100.118.133.63"],
-			"accept": ["admin", "reddragon"],
+			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
 			"src": "100.68.97.8",
 			"dst": ["100.118.133.63"],
-			"accept": ["admin", "reddragon"],
+			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -77,7 +77,7 @@
 		{
 			"src": "100.92.110.43",
 			"dst": ["100.79.93.121"],
-			"accept": ["admin", "reddragon", "root"],
+			"check": ["admin", "reddragon", "root"],
 		},
 	],
 	"nodeAttrs": [
