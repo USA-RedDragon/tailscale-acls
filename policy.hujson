@@ -6,7 +6,7 @@
 
 	"acls": [
 		// Admins can access admin tag
-		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*"]},
+		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// Can always access internet
 		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet"]},
 		// Can always access self
@@ -25,7 +25,7 @@
 		{
 			"action": "accept",
 			"src":    ["autogroup:admin"],
-			"dst":    ["*"],
+			"dst":    ["*:*"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
