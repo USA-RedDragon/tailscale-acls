@@ -3,6 +3,8 @@
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
 		"tag:ssh": ["autogroup:admin"],
+		"tag:k8s-operator": ["autogroup:admin"],
+		"tag:k8s": ["tag:k8s-operator"],
 	},
 
 	"acls": [
