@@ -2,6 +2,8 @@
 {
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
+		"tag:katelyn-comma": ["autogroup:admin"],
+		"tag:jacob-comma": ["autogroup:admin"],
 		"tag:dns": ["autogroup:admin","tag:k8s-operator"],
 		"tag:ntp": ["autogroup:admin","tag:k8s-operator"],
 		"tag:k8s-operator": ["autogroup:admin"],
@@ -11,6 +13,8 @@
 	"acls": [
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
+		// Can always own comma
+		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
 		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443"]},
 		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
@@ -36,7 +40,7 @@
 	 	{
 	 		"src": "USA-RedDragon@github",
 	 		"proto": "tcp",
-			"accept": ["100.79.93.121:80","100.68.97.8:80"],
+			"accept": ["100.79.93.121:80","100.68.97.8:80","tag:jacob-comma:126","tag:katelyn-comma:126"],
 	 	},
 		{
 	 		"src": "torvalds@github",
@@ -47,18 +51,18 @@
 		{
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
-			// accept phone, open, dns over tcp, and member 443
-	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443"],
-			// deny framework 13, dns on wrong port and proto, ntp wrong proto
-	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:123"],
+			// accept phone, open, dns over tcp, member 443, and self comma
+	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:katelyn-comma:126"],
+			// deny framework 13, dns on wrong port and proto, ntp wrong proto, jacob comma
+	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:123","tag:jacob-comma:126"],
 	 	},
 		{
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "udp",
-			// accept phone, open, dns, quic, and ntp
-	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:ntp:123"],
-			// deny framework 13, dns on wrong port, ntp on wrong port
-	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:1234"],
+			// accept phone, open, dns, quic, ntp, and self comma
+	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:ntp:123","tag:katelyn-comma:126"],
+			// deny framework 13, dns on wrong port, ntp on wrong port, jacob comma
+	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:1234","tag:jacob-comma:126"],
 	 	},
 	],
 
