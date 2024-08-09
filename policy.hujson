@@ -8,7 +8,7 @@
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// Can always access internet
-		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet"]},
+		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*"]},
 		// Can always access self
 		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:self"]},
 		// Can always access open
@@ -41,5 +41,10 @@
 	 		"accept": [],
 	 		"deny": ["tag:open:*"],
 	 	},
+		{
+			"src": "autogroup:member"
+			"accept": ["tag:open:*"],
+			"deny": ["autogroup:admin"],
+		},
 	],
 }
