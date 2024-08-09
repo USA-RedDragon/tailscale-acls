@@ -3,6 +3,7 @@
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
 		"tag:ssh": ["autogroup:admin"],
+		"tag:dns": ["autogroup:admin"],
 		"tag:k8s-operator": ["autogroup:admin"],
 		"tag:k8s": ["tag:k8s-operator"],
 	},
@@ -11,7 +12,7 @@
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// Can always access internet, self, and tagged open
-		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*"]},
+		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53"]},
 	],
 
 	"ssh": [
@@ -45,9 +46,9 @@
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
 			// accept phone
-	 		"accept": ["100.68.97.8:80","tag:open:80"],
+	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53"],
 			// deny framework 13
-	 		"deny": ["100.79.93.121:80"],
+	 		"deny": ["100.79.93.121:80","tag:dns:5353"],
 	 	},
 	],
 
