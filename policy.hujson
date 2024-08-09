@@ -30,8 +30,14 @@
 		},
 		{
 			"action": "check",
+			"src":    ["katelyn.c.maes@gmail.com"],
+			"dst":    ["tag:katelyn-comma"],
+			"users":  ["autogroup:nonroot"],
+		},
+		{
+			"action": "check",
 			"src":    ["autogroup:admin"],
-			"dst":    ["autogroup:self"],
+			"dst":    ["autogroup:self","tag:katelyn-comma","tag:jacob-comma"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
@@ -77,6 +83,22 @@
 			"dst": ["100.118.133.63"],
 			"check": ["admin", "reddragon"],
 			"deny": ["root"],
+		},
+		{
+			"src": "katelyn.c.maes@gmail.com",
+			"dst": ["tag:katelyn-comma"],
+			"check": ["comma", "reddragon"],
+			"deny": ["root"],
+		},
+		{
+			"src": "USA-RedDragon@github",
+			"dst": ["tag:katelyn-comma"],
+			"check": ["comma", "reddragon", "root"],
+		},
+		{
+			"src": "USA-RedDragon@github",
+			"dst": ["tag:jacob-comma"],
+			"check": ["comma", "reddragon", "root"],
 		},
 		{
 			"src": "100.68.97.8",
