@@ -2,7 +2,6 @@
 {
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
-		"tag:ssh": ["autogroup:admin"],
 		"tag:dns": ["autogroup:admin"],
 		"tag:k8s-operator": ["autogroup:admin"],
 		"tag:k8s": ["tag:k8s-operator"],
@@ -21,12 +20,6 @@
 			"src":    ["autogroup:member"],
 			"dst":    ["autogroup:self"],
 			"users":  ["autogroup:nonroot"],
-		},
-		{
-			"action": "accept",
-			"src":    ["autogroup:admin"],
-			"dst":    ["tag:ssh","autogroup:self"],
-			"users":  ["autogroup:nonroot","root"],
 		},
 	],
 
@@ -78,11 +71,6 @@
 		{
 			"src": "100.92.110.43",
 			"dst": ["100.79.93.121"],
-			"accept": ["admin", "reddragon", "root"],
-		},
-		{
-			"src": "100.92.110.43",
-			"dst": ["tag:ssh"],
 			"accept": ["admin", "reddragon", "root"],
 		},
 	],
