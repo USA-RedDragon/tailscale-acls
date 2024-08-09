@@ -2,7 +2,8 @@
 {
 	"tagOwners": {
 		"tag:open": ["autogroup:admin"],
-		"tag:dns": ["autogroup:admin"],
+		"tag:dns": ["autogroup:admin","tag:k8s-operator"],
+		"tag:ntp": ["autogroup:admin","tag:k8s-operator"],
 		"tag:k8s-operator": ["autogroup:admin"],
 		"tag:k8s": ["tag:k8s-operator"],
 	},
@@ -10,8 +11,10 @@
 	"acls": [
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
-		// Can always access internet, self, and tagged open
-		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53", "autogroup:member:443"]},
+		// TCP: Can always access internet, self, tagged open, funnels/serve
+		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","autogroup:member:443"]},
+		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
+		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443"]},
 	],
 
 	"ssh": [
@@ -44,10 +47,18 @@
 		{
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
-			// accept phone
-	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443"],
-			// deny framework 13
-	 		"deny": ["100.79.93.121:80","tag:dns:5353"],
+			// accept phone, open, and member 443
+	 		"accept": ["100.68.97.8:80","tag:open:80","100.79.93.121:443"],
+			// deny framework 13, dns on wrong port and proto, dns on wrong proto
+	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:dns:53","tag:ntp:123"],
+	 	},
+		{
+	 		"src": "katelyn.c.maes@gmail.com",
+	 		"proto": "udp",
+			// accept phone, open, dns, quic, and ntp
+	 		"accept": ["100.68.97.8:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:ntp:123"],
+			// deny framework 13, dns on wrong port, ntp on wrong port
+	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:1234"],
 	 	},
 	],
 
