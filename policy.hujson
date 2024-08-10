@@ -80,7 +80,7 @@
 		},
 		{
 			"src": "katelyn.c.maes@gmail.com",
-			"dst": ["100.118.133.63"],
+			"dst": ["100.114.185.46"],
 			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
@@ -102,7 +102,7 @@
 		},
 		{
 			"src": "100.64.23.110",
-			"dst": ["100.118.133.63"],
+			"dst": ["100.114.185.46"],
 			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
