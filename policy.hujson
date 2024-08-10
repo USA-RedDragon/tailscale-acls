@@ -46,7 +46,7 @@
 	 	{
 	 		"src": "jacob@mcswain.dev",
 	 		"proto": "tcp",
-			"accept": ["100.79.93.121:80","100.64.23.110:80","tag:jacob-comma:126","tag:katelyn-comma:126"],
+			"accept": ["100.126.56.39:80","100.64.23.110:80","tag:jacob-comma:126","tag:katelyn-comma:126"],
 	 	},
 		{
 	 		"src": "torvalds@github",
@@ -58,24 +58,24 @@
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
 			// accept phone, open, dns over tcp, member 443, and self comma
-	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:katelyn-comma:126"],
+	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.126.56.39:443","tag:katelyn-comma:126"],
 			// deny framework 13, dns on wrong port and proto, ntp wrong proto, jacob comma
-	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:123","tag:jacob-comma:126"],
+	 		"deny": ["100.126.56.39:80","tag:dns:5353","tag:ntp:123","tag:jacob-comma:126"],
 	 	},
 		{
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "udp",
 			// accept phone, open, dns, quic, ntp, and self comma
-	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.79.93.121:443","tag:ntp:123","tag:katelyn-comma:126"],
+	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.126.56.39:443","tag:ntp:123","tag:katelyn-comma:126"],
 			// deny framework 13, dns on wrong port, ntp on wrong port, jacob comma
-	 		"deny": ["100.79.93.121:80","tag:dns:5353","tag:ntp:1234","tag:jacob-comma:126"],
+	 		"deny": ["100.126.56.39:80","tag:dns:5353","tag:ntp:1234","tag:jacob-comma:126"],
 	 	},
 	],
 
 	"sshTests": [
 		{
 			"src": "jacob@mcswain.dev",
-			"dst": ["100.79.93.121"],
+			"dst": ["100.126.56.39"],
 			"check": ["admin", "reddragon"],
 		},
 		{
@@ -108,12 +108,12 @@
 		},
 		{
 			"src": "100.64.23.110",
-			"dst": ["100.79.93.121"],
+			"dst": ["100.126.56.39"],
 			"deny": ["admin", "reddragon", "root"],
 		},
 		{
 			"src": "100.88.30.18",
-			"dst": ["100.79.93.121"],
+			"dst": ["100.126.56.39"],
 			"check": ["admin", "reddragon", "root"],
 		},
 	],
