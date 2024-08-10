@@ -112,7 +112,7 @@
 			"deny": ["admin", "reddragon", "root"],
 		},
 		{
-			"src": "100.92.110.43",
+			"src": "100.88.30.18",
 			"dst": ["100.79.93.121"],
 			"check": ["admin", "reddragon", "root"],
 		},
