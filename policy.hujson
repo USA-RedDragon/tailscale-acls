@@ -18,9 +18,9 @@
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
-		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
 		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
-		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
 	],
 
 	"ssh": [
@@ -60,7 +60,7 @@
 	 		"src": "katelyn.c.maes@gmail.com",
 	 		"proto": "tcp",
 			// accept phone, open, dns over tcp, member 443, and self comma
-	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.126.56.39:443","tag:katelyn-comma:126","tag:golink:80","tag:vacuum:443","tag:vacuum:80"],
+	 		"accept": ["100.64.23.110:80","tag:open:80","tag:dns:53","100.126.56.39:443","tag:katelyn-comma:126","tag:golink:443","tag:golink:80","tag:vacuum:443","tag:vacuum:80"],
 			// deny framework 13, dns on wrong port and proto, ntp wrong proto, jacob comma
 	 		"deny": ["100.126.56.39:80","tag:dns:5353","tag:ntp:123","tag:jacob-comma:126","tag:vacuum:1111"],
 	 	},
