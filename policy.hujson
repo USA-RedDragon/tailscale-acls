@@ -124,4 +124,13 @@
 			"attr":   ["funnel"],
 		},
 	],
+	"grants": [{
+      "src": ["autogroup:admin"],
+      "dst": ["tag:golink"],
+      "app": {
+        "tailscale.com/cap/golink": [{
+            "admin": true
+        }]
+      }
+  }]
 }
