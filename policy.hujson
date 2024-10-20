@@ -8,6 +8,7 @@
 		"tag:ntp": ["autogroup:admin","tag:k8s-operator"],
 		"tag:k8s-operator": ["autogroup:admin"],
 		"tag:k8s": ["tag:k8s-operator"],
+		"tag:frigate": ["autogroup:admin"],
 		"tag:golink": ["autogroup:admin"],
 		"tag:vacuum": ["autogroup:admin","tag:k8s-operator"],
 	},
@@ -18,7 +19,7 @@
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
-		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80","tag:frigate:443","tag:frigate:80"]},
 		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
 		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
 	],
