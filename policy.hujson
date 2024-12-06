@@ -17,13 +17,13 @@
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// tag:open is open for observatory
-		{"action": "accept", "src": ["tag:observatory], "dst": ["tag:open:*"]},
+		{"action": "accept", "src": ["tag:observatory","tag:katelyn-comma","tag:jacob-comma"], "dst": ["tag:open:*"]},
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
-		{"action": "accept", "src": ["autogroup:member","tag:katelyn-comma","tag:jacob-comma"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
 		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
-		{"action": "accept", "src": ["autogroup:member","tag:katelyn-comma","tag:jacob-comma"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
+		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
 	],
 
 	"ssh": [
