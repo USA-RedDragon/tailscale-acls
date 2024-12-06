@@ -11,6 +11,7 @@
 		"tag:frigate": ["autogroup:admin"],
 		"tag:golink": ["autogroup:admin"],
 		"tag:vacuum": ["autogroup:admin","tag:k8s-operator"],
+		"tag:observatory": ["autogroup:admin"],
 	},
 
 	"acls": [
@@ -56,6 +57,12 @@
 	 		"accept": [],
 	 		"proto": "tcp",
 	 		"deny": ["tag:open:80"],
+	 	},
+		{
+	 		"src": "tag:observatory",
+	 		"accept": ["tag:open:80"],
+	 		"proto": "tcp",
+	 		"deny": ["100.126.56.39:80","tag:dns:5353","tag:ntp:123","tag:jacob-comma:126","tag:vacuum:1111"],
 	 	},
 		{
 	 		"src": "katelyn.c.maes@gmail.com",
