@@ -16,6 +16,8 @@
 	"acls": [
 		// Admins can access admin tag
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
+		// tag:open is open for observatory
+		{"action": "accept", "src": ["tag:observatory], "dst": ["tag:open:*"]},
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
