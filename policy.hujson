@@ -42,7 +42,7 @@
 		{
 			"action": "check",
 			"src":    ["autogroup:admin"],
-			"dst":    ["autogroup:self","tag:katelyn-comma","tag:jacob-comma"],
+			"dst":    ["autogroup:self","tag:katelyn-comma","tag:jacob-comma","tag:observatory"],
 			"users":  ["autogroup:nonroot", "root"],
 		},
 	],
