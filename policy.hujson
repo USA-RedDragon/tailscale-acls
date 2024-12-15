@@ -111,7 +111,7 @@
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["tag:jacob-comma"],
-			"accept": ["comma". "reddragon", "root"],
+			"accept": ["comma", "reddragon", "root"],
 		},
 		{
 			"src": "100.64.23.110",
