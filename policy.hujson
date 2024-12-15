@@ -106,19 +106,17 @@
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["tag:katelyn-comma"],
-			"check": ["comma"],
-			"accept": ["reddragon", "root"],
+			"accept": ["comma", "reddragon", "root"],
 		},
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["tag:jacob-comma"],
-			"check": ["comma"],
-			"accept": ["reddragon", "root"],
+			"accept": ["comma". "reddragon", "root"],
 		},
 		{
 			"src": "100.64.23.110",
 			"dst": ["100.114.185.46"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -129,7 +127,7 @@
 		{
 			"src": "100.88.30.18",
 			"dst": ["100.126.56.39"],
-			"check": ["admin", "reddragon", "root"],
+			"accept": ["admin", "reddragon", "root"],
 		},
 	],
 	"nodeAttrs": [
