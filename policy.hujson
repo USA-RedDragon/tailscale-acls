@@ -94,7 +94,7 @@
 		{
 			"src": "katelyn.c.maes@gmail.com",
 			"dst": ["100.114.185.46"],
-			"accept": ["admin", "reddragon"],
+			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -116,7 +116,7 @@
 		{
 			"src": "100.64.23.110",
 			"dst": ["100.114.185.46"],
-			"accept": ["admin", "reddragon"],
+			"check": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -125,7 +125,7 @@
 			"deny": ["admin", "reddragon", "root"],
 		},
 		{
-			"src": "100.88.30.18",
+			"src": "100.106.64.82",
 			"dst": ["100.126.56.39"],
 			"accept": ["admin", "reddragon", "root"],
 		},
