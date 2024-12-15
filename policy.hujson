@@ -87,12 +87,12 @@
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["100.126.56.39"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 		},
 		{
 			"src": "katelyn.c.maes@gmail.com",
 			"dst": ["100.114.185.46"],
-			"check": ["admin", "reddragon"],
+			"accept": ["admin", "reddragon"],
 			"deny": ["root"],
 		},
 		{
@@ -104,12 +104,14 @@
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["tag:katelyn-comma"],
-			"check": ["comma", "reddragon", "root"],
+			"check": ["comma"],
+			"accept": ["reddragon", "root"],
 		},
 		{
 			"src": "jacob@mcswain.dev",
 			"dst": ["tag:jacob-comma"],
-			"check": ["comma", "reddragon", "root"],
+			"check": ["comma"],
+			"accept": ["reddragon", "root"],
 		},
 		{
 			"src": "100.64.23.110",
