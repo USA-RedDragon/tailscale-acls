@@ -18,10 +18,8 @@
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// tag:open is open for observatory
 		{"action": "accept", "src": ["tag:observatory","tag:katelyn-comma","tag:jacob-comma"], "dst": ["tag:open:*"]},
-                // observatory can mqtt
-		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883"]},
-                // observatory can talk to power switch
-		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.84.20.102:*"]},
+                // observatory can mqtt and power switch
+		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*"]},
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
