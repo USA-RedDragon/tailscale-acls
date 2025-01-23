@@ -18,6 +18,8 @@
 		{"action": "accept", "src": ["autogroup:admin"], "dst": ["*:*"]},
 		// tag:open is open for observatory
 		{"action": "accept", "src": ["tag:observatory","tag:katelyn-comma","tag:jacob-comma"], "dst": ["tag:open:*"]},
+		// allow k8s to touch observatory
+		{"action": "accept", "src": ["tag:k8s"], "dst": ["tag:observatory:*"]},
                 // observatory can mqtt and power switch
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*"]},
 		// Can always own comma
