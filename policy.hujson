@@ -26,11 +26,11 @@
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		// TCP: Can always access internet, self, tagged open, dns over tcp, funnels/serve
-		{"action": "accept", "src": ["autogroup:member"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
+		{"action": "accept", "src": ["jacob@mcswain.dev"], "proto": "tcp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
 		// UDP: Can always access internet, self, tagged open, ntp, dns, quic
-		{"action": "accept", "src": ["autogroup:member"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
-		{"action": "deny", "src": ["tag:untrusted"], "proto": "tcp", "dst": ["autogroup:internet:*","tag:open:*","tag:dns:53","autogroup:member:443","tag:golink:80","tag:golink:443","tag:vacuum:443","tag:vacuum:80"]},
-		{"action": "deny", "src": ["tag:untrusted"], "proto": "udp", "dst": ["autogroup:internet:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
+		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
+		{"action": "accept", "src": ["jacob@mcswain.dev"], "proto": "udp", "dst": ["autogroup:internet:*","autogroup:self:*","tag:open:*","tag:ntp:123","tag:dns:53","autogroup:member:443","tag:vacuum:443","tag:vacuum:80","tag:golink:80","tag:golink:443"]},
 	],
 
 	"ssh": [
