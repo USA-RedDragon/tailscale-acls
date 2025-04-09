@@ -11,7 +11,8 @@
 		"tag:golink": ["autogroup:admin"],
 		"tag:vacuum": ["autogroup:admin","tag:k8s-operator"],
 		"tag:observatory": ["autogroup:admin"],
-		"tag:untrusted": [],
+		"tag:ereader": ["autogroup:admin"]
+		"tag:untrusted": ["autogroup:admin"],
 	},
 
 	"acls": [
@@ -23,6 +24,8 @@
 		{"action": "accept", "src": ["tag:k8s"], "dst": ["tag:observatory:*"]},
                 // observatory can mqtt and power switch
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*"]},
+		// ereader can reach calibre
+		{"action": "accept", "src": ["tag:ereader"], "dst": ["100.104.18.64:9090"]},
 		// Can always own comma
 		{"action": "accept", "src": ["katelyn.c.maes@gmail.com"], "dst": ["tag:katelyn-comma:*"]},
 		{"action": "accept", "src": ["autogroup:member"], "dst": ["autogroup:self:*"]},
