@@ -11,8 +11,8 @@
 		"tag:golink": ["autogroup:admin"],
 		"tag:vacuum": ["autogroup:admin","tag:k8s-operator"],
 		"tag:observatory": ["autogroup:admin"],
-		"tag:ereader": ["autogroup:admin"]
-		"tag:untrusted": ["autogroup:admin"],
+		"tag:ereader": ["autogroup:admin"],
+		"tag:untrusted": ["autogroup:admin"]
 	},
 
 	"acls": [
