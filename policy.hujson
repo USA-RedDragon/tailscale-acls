@@ -23,8 +23,8 @@
 		{"action": "accept", "src": ["tag:observatory","tag:katelyn-comma","tag:jacob-comma"], "dst": ["tag:open:*"]},
 		// allow k8s to touch observatory
 		{"action": "accept", "src": ["tag:k8s"], "dst": ["tag:observatory:*"]},
-                // observatory can mqtt and power switch
-		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*","tag:mqtt:*"]},
+        // observatory can mqtt and power switch
+		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*","100.100.82.55:*","tag:mqtt:*"]},
 		// ereader can reach calibre
 		{"action": "accept", "src": ["tag:ereader"], "dst": ["100.104.18.64:9090"]},
 		// Can always own comma
