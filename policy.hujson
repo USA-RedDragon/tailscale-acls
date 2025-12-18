@@ -13,6 +13,7 @@
 		"tag:vacuum": ["autogroup:admin","tag:k8s-operator"],
 		"tag:observatory": ["autogroup:admin"],
 		"tag:ereader": ["autogroup:admin"],
+		"tag:peer-relays": ["autogroup:admin"],
 		"tag:untrusted": ["autogroup:admin"]
 	},
 
@@ -146,13 +147,22 @@
 			"attr":   ["funnel"],
 		},
 	],
-	"grants": [{
-      "src": ["autogroup:admin"],
-      "dst": ["tag:golink"],
-      "app": {
-        "tailscale.com/cap/golink": [{
-            "admin": true
-        }]
-      }
-  }]
+	"grants": [
+		{
+			"src": ["autogroup:admin"],
+			"dst": ["tag:golink"],
+			"app": {
+				"tailscale.com/cap/golink": [{
+					"admin": true
+				}]
+			}
+		},
+		{
+			"src": ["autogroup:member"],
+			"dst": ["tag:peer-relays"],
+			"app": {
+				"tailscale.com/cap/relay": []
+			}
+		}
+	]
 }
