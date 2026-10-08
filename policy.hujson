@@ -30,9 +30,9 @@
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*","100.100.82.55:*","tag:mqtt:*"]},
 		// observatory ships its logs to Loki (loki-push, push-only, in home-cluster-flux)
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.80.74.76:3500"]},
-		// Path of Titans VPS (hostile): only its CrowdSec agent/bouncer -> the cluster's CrowdSec LAPI.
+		// Path of Titans VPS (hostile): only its CrowdSec agent/bouncer -> crowdsec-lapi:8080 (home-cluster-flux).
 		// Nothing else on the tailnet, and no rule lets anything but admins reach it.
-		{"action": "accept", "src": ["tag:pots-vps"], "proto": "tcp", "dst": ["192.168.254.14:8080"]},
+		{"action": "accept", "src": ["tag:pots-vps"], "proto": "tcp", "dst": ["100.118.142.122:8080"]},
 		// ereader can reach calibre
 		{"action": "accept", "src": ["tag:ereader"], "dst": ["100.104.18.64:9090"]},
 		// Can always own comma
@@ -72,8 +72,8 @@
 			"src": "tag:pots-vps",
 			"proto": "tcp",
 			// only CrowdSec LAPI; not its metrics port, the gateways, Loki, the router, NAS or tagged nodes
-			"accept": ["192.168.254.14:8080"],
-			"deny": ["192.168.254.14:6060","192.168.254.254:443","192.168.254.253:443","100.80.74.76:3500","192.168.1.1:22","192.168.1.135:443","tag:k8s:80","tag:observatory:22","tag:open:80","tag:dns:53","tag:mqtt:1883","100.126.56.39:22"],
+			"accept": ["100.118.142.122:8080"],
+			"deny": ["100.118.142.122:22","100.118.142.122:6060","192.168.254.14:8080","192.168.254.254:443","192.168.254.253:443","100.80.74.76:3500","192.168.1.1:22","192.168.1.135:443","tag:k8s:80","tag:observatory:22","tag:open:80","tag:dns:53","tag:mqtt:1883","100.126.56.39:22"],
 		},
 		{
 			"src": "tag:pots-vps",
