@@ -30,6 +30,10 @@
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.73.149.46:1883","100.84.20.102:*","100.100.82.55:*","tag:mqtt:*"]},
 		// observatory ships its logs to Loki (loki-push, push-only, in home-cluster-flux)
 		{"action": "accept", "src": ["tag:observatory"], "dst": ["100.80.74.76:3500"]},
+		// observatory resolves through the tailnet DNS (AdGuard on the router), which answers
+		// s3.mcswain.dev with the public gateway's LAN IP, where nina-s3-uploader sends subs.
+		{"action": "accept", "src": ["tag:observatory"], "proto": "udp", "dst": ["tag:dns:53"]},
+		{"action": "accept", "src": ["tag:observatory"], "proto": "tcp", "dst": ["tag:dns:53","192.168.254.254:443"]},
 		// Path of Titans VPS (hostile): only its CrowdSec agent/bouncer -> crowdsec-lapi:8080 (home-cluster-flux).
 		// Nothing else on the tailnet, and no rule lets anything but admins reach it.
 		{"action": "accept", "src": ["tag:pots-vps"], "proto": "tcp", "dst": ["100.118.142.122:8080"]},
@@ -72,6 +76,17 @@
 	],
 
 	"tests": [
+		{
+			"src": "tag:observatory",
+			"proto": "tcp",
+			"accept": ["tag:dns:53","192.168.254.254:443","100.80.74.76:3500"],
+			"deny": ["192.168.254.254:22","192.168.254.253:443","192.168.1.1:22"],
+		},
+		{
+			"src": "tag:observatory",
+			"proto": "udp",
+			"accept": ["tag:dns:53"],
+		},
 		{
 			"src": "katelyn.c.maes@gmail.com",
 			"proto": "tcp",
