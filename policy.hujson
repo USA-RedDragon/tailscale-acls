@@ -16,7 +16,9 @@
 		"tag:peer-relays": ["autogroup:admin"],
 		"tag:untrusted": ["autogroup:admin"],
 		// Path of Titans VPS: internet-facing and treated as hostile.
-		"tag:pots-vps": ["autogroup:admin"]
+		"tag:pots-vps": ["autogroup:admin"],
+		// AREDN mesh subnet router (aredn-mesh in home-cluster-flux services/aredn).
+		"tag:aredn": ["autogroup:admin"]
 	},
 
 	"acls": [
@@ -189,6 +191,7 @@
 		"routes": {
 			"192.168.254.253/32": ["tag:dns"],
 			"192.168.254.254/32": ["tag:dns"],
+			"10.0.0.0/8":         ["tag:aredn"],
 		},
 		"exitNode": ["tag:dns"],
 	},
